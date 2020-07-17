@@ -19,7 +19,6 @@ for current_config_set in global_config_sets:
     current_config_set_name = current_config_set['configSetName']
     current_config_set_id = current_config_set['id']
     current_config_set_status = current_config_set['status']
-    current_config_set_application_service_type = current_config_set['applicationServiceType']
     current_config_set_last_config_time = current_config_set['lastConfigTime']
     current_config_set_last_deployment_time = current_config_set['lastDeploymentTime']
     current_config_set_app_svcs_template_reference = current_config_set['appSvcsTemplateReference']['link']
@@ -39,7 +38,6 @@ for current_config_set in global_config_sets:
     print('    ID: ' + current_config_set_id)
     print('    Status: ' + current_config_set_status)
     print('    Application: ' + current_config_set_application_name)
-    print('    Application Service Type: ' + current_config_set_application_service_type)
     print('    Device: ' + current_config_set_device_name)
     print('    App Svcs Template: ' + current_config_set_app_svcs_template_name)
     print('    Last Configured: ' + current_config_set_last_config_time)
