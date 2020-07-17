@@ -1,7 +1,7 @@
 import requests
 import json
 
-bigiq_ip = '127.0.0.1'
+bigiq_ip = '54.163.99.90'
 username = 'admin'
 password = 'f5c0nfig123!'
 
