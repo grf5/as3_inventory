@@ -14,8 +14,8 @@ auth_token = json.loads(token_auth_response.text)['token']['token']
 # Get a list of all of the applications deployed on the BIG-IQ
 headers = {'content-type':'application/json','X-F5-Auth-Token':auth_token}
 global_config_sets_response = requests.get('https://' + bigiq_ip + '/mgmt/cm/global/config-sets', verify=False, headers=headers)
+print(global_config_sets_response.content)
 global_config_sets = json.loads(global_config_sets_response.content)['items']
-print(global_config_sets.text)
 for current_config_set in global_config_sets:
     current_config_set_name = current_config_set['configSetName']
     current_config_set_id = current_config_set['id']
