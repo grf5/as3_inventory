@@ -11,14 +11,12 @@ urllib3.disable_warnings()
 # Get an auth token from BIG-IQ
 credentials_dict = {"username": username, "password": password}
 headers = {'content-type': 'application/json'}
-token_auth_response = requests.post('https://' + bigiq_ip + '/mgmt/shared/authn/login', verify=False,
-                                    data=json.dumps(credentials_dict), headers=headers)
+token_auth_response = requests.post('https://' + bigiq_ip + '/mgmt/shared/authn/login', verify=False,data=json.dumps(credentials_dict), headers=headers)
 auth_token = json.loads(token_auth_response.text)['token']['token']
 
 # Get a list of all of the applications deployed on the BIG-IQ
 headers = {'content-type': 'application/json', 'X-F5-Auth-Token': auth_token}
-global_config_sets_response = requests.get('https://' + bigiq_ip + '/mgmt/cm/global/config-sets', verify=False,
-                                           headers=headers)
+global_config_sets_response = requests.get('https://' + bigiq_ip + '/mgmt/cm/global/config-sets', verify=False,headers=headers)
 # print(global_config_sets_response.content)
 global_config_sets = json.loads(global_config_sets_response.content)['items']
 for current_config_set in global_config_sets:
@@ -64,8 +62,7 @@ for current_config_set in global_config_sets:
         print('    Application Services (AS3) Template: ' + current_config_set_app_svcs_template_name)
     if current_config_set.has_key('templateReference'):
         current_config_set_template_reference = current_config_set['templateReference']['link']
-        current_config_set_template = requests.get(
-            current_config_set_template_reference.replace('localhost', bigiq_ip), verify=False,headers=headers)
+        current_config_set_template = requests.get(current_config_set_template_reference.replace('localhost', bigiq_ip), verify=False,headers=headers)
         current_config_set_template_name = json.loads(current_config_set_template.content)['name']
         print('    BIG-IQ Application Template: ' + current_config_set_app_svcs_template_name)
     if current_config_set.has_key('deviceReference'):
