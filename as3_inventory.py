@@ -2,7 +2,7 @@ import requests
 import json
 import urllib3
 
-bigiq_ip = '54.163.99.90'
+bigiq_ip = '127.0.0.1'
 username = 'admin'
 password = 'f5c0nfig123!'
 
@@ -68,8 +68,9 @@ for current_config_set in global_config_sets:
     if current_config_set.has_key('deviceReference'):
         current_config_set_device_reference = current_config_set['deviceReference']['link']
         current_config_set_device = requests.get(current_config_set_device_reference.replace('localhost', bigiq_ip),verify=False, headers=headers)
-        current_config_set_device_name = json.loads(current_config_set_device.content)['address']
-        print('    Device: ' + current_config_set_device_name)
+        current_config_set_device_name = json.loads(current_config_set_device.content)['hostname']
+        current_config_set_device_address = json.loads(current_config_set_device.content)['address']
+        print('    Device: ' + current_config_set_device_name + '(' + current_config_set_device_address + ')')
     if current_config_set.has_key('selfLink'):
         current_config_self_link = current_config_set['selfLink']
         current_config_self_link = current_config_self_link.replace('localhost', bigiq_ip)
