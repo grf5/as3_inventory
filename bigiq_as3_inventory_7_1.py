@@ -19,6 +19,7 @@ for current_config_set in global_config_sets:
     current_config_set_name = current_config_set['configSetName']
     current_config_set_id = current_config_set['id']
     current_config_set_status = current_config_set['status']
+    current_config_set_application_service_type = current_config_set['applicationServiceType']
     current_config_set_last_config_time = current_config_set['lastConfigTime']
     current_config_set_last_deployment_time = current_config_set['lastDeploymentTime']
     current_config_set_app_svcs_template_reference = current_config_set['appSvcsTemplateReference']['link']
