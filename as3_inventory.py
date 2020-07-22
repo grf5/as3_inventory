@@ -28,8 +28,8 @@ for current_config_set in global_config_sets:
         current_config_set_name = current_config_set['configSetName']
         print('Name: ' + current_config_set_name)
     if current_config_set.has_key('partition'):
-        current_config_set_id = current_config_set['partition']
-        print('    Partition: ' + current_config_set_id)
+        current_config_set_partition = current_config_set['partition']
+        print('    Partition: ' + current_config_set_partition)
     if current_config_set.has_key('id'):
         current_config_set_id = current_config_set['id']
         print('    ID: ' + current_config_set_id)
@@ -37,14 +37,14 @@ for current_config_set in global_config_sets:
         current_config_set_status = current_config_set['status']
         print('    Status: ' + current_config_set_status)
     if current_config_set.has_key('applicationServiceType'):
-        current_config_set_last_deployment_time = current_config_set['applicationServiceType']
-        print('    Application Service Type: ' + current_config_set_last_deployment_time)
+        current_config_set_application_service_type = current_config_set['applicationServiceType']
+        print('    Application Service Type: ' + current_config_set_application_service_type)
     if current_config_set.has_key('analyticsMode'):
-        current_config_set_last_deployment_time = current_config_set['analyticsMode']
-        print('    Analytics Mode: ' + current_config_set_last_deployment_time)
+        current_config_set_analytics_mode = current_config_set['analyticsMode']
+        print('    Analytics Mode: ' + current_config_set_analytics_mode)
     if current_config_set.has_key('protectionMode'):
-        current_config_set_last_deployment_time = current_config_set['protectionMode']
-        print('    Protection Mode: ' + current_config_set_last_deployment_time)
+        current_config_set_protection_mode = current_config_set['protectionMode']
+        print('    Protection Mode: ' + current_config_set_protection_mode)
     if current_config_set.has_key('applicationReference'):
         current_config_set_application_reference = current_config_set['applicationReference']['link']
         current_config_set_application = requests.get(current_config_set_application_reference.replace('localhost', bigiq_ip), verify=False, headers=headers)
@@ -64,7 +64,7 @@ for current_config_set in global_config_sets:
         current_config_set_template_reference = current_config_set['templateReference']['link']
         current_config_set_template = requests.get(current_config_set_template_reference.replace('localhost', bigiq_ip), verify=False,headers=headers)
         current_config_set_template_name = json.loads(current_config_set_template.content)['name']
-        print('    BIG-IQ Application Template: ' + current_config_set_app_svcs_template_name)
+        print('    BIG-IQ Application Template: ' + current_config_set_template_name)
     if current_config_set.has_key('deviceReference'):
         current_config_set_device_reference = current_config_set['deviceReference']['link']
         current_config_set_device = requests.get(current_config_set_device_reference.replace('localhost', bigiq_ip),verify=False, headers=headers)
@@ -79,8 +79,8 @@ for current_config_set in global_config_sets:
         current_config_sub_path = current_config_set['subPath']
         print('    Sub-Path: ' + current_config_sub_path)
     if current_config_set.has_key('createDateTime'):
-        current_config_set_last_config_time = current_config_set['createDateTime']
-        print('    Created: ' + current_config_set_last_config_time)
+        current_config_set_create_date_time = current_config_set['createDateTime']
+        print('    Created: ' + current_config_set_create_date_time)
     if current_config_set.has_key('lastConfigTime'):
         current_config_set_last_config_time = current_config_set['lastConfigTime']
         print('    Last Configured: ' + current_config_set_last_config_time)
