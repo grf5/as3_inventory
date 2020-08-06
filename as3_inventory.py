@@ -91,4 +91,4 @@ for current_config_set in global_config_sets:
         current_config_set_resource_dict = current_config_set['resources']
         print('    Configuration Objects:')
         for current_resource in current_config_set_resource_dict:
-            print('    - ' + current_resource)
+            print('    - ' + str(current_resource))
