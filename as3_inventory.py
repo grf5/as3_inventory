@@ -89,6 +89,6 @@ for current_config_set in global_config_sets:
         print('    Last Deployment: ' + current_config_set_last_deployment_time)
     if current_config_set.has_key('resources'):
         current_config_set_resource_dict = current_config_set['resources']
+        print('    Configuration Objects:')
         for current_resource in current_config_set_resource_dict:
-            print(current_resource)
-            print('    Configuration Objects:')
+            print('    - ' + current_resource)
