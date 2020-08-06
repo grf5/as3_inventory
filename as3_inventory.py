@@ -102,5 +102,5 @@ for current_config_set in global_config_sets:
                             print('    - ' + str(current_pool_member['parameters']))
             if current_object[:8] == 'ltm:node':
                 print('    Nodes:')
-                node_list = current_config_set_resource_dict[current_object][0]
-                print(str(node_list))
+                node_list = current_config_set_resource_dict[current_object]
+                print('    - ' + str(node_list))
