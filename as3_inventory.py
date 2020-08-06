@@ -96,5 +96,5 @@ for current_config_set in global_config_sets:
                 print('    - Virtual Server: ')
             if current_resource[:8] == 'ltm:pool':
                 print('    - Pool:')
-            if current_resource[:8] == 'ltm:node'
+            if current_resource[:8] == 'ltm:node':
                 print('    - Node: ')
