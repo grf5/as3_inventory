@@ -90,11 +90,7 @@ for current_config_set in global_config_sets:
         current_config_set_resource_dict = current_config_set['resources']
         print(current_config_set_resource_dict)
         print('    Configuration Objects:')
-        for current_resource in current_config_set_resource_dict:
-            print('    ' + current_resource)
-            # if current_resource[:11] == 'ltm:virtual':
-            #     print('    - Virtual Server: ' + current_resource['parameters'])
-            # if current_resource[:8] == 'ltm:pool':
-            #     print('    - Pool:' + current_resource['parameters'])
-            # if current_resource[:8] == 'ltm:node':
-            #     print('    - Node: ' + current_resource['parameters'])
+        if len[current_config_set_resource_dict] > 0:
+            key, value = current_config_set_resource_dict.popitem()
+            print('key' + key)
+            print('value' + value)
