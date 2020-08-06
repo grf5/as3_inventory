@@ -91,7 +91,7 @@ for current_config_set in global_config_sets:
         print(current_config_set_resource_dict)
         print('    Configuration Objects:')
         for current_resource in current_config_set_resource_dict:
-            print('current_resource')
+            print(current_resource)
             if current_resource[:11] == 'ltm:virtual':
                 print('    - Virtual Server: ' + current_resource['parameters'])
             if current_resource[:8] == 'ltm:pool':
