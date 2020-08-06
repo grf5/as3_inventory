@@ -90,7 +90,7 @@ for current_config_set in global_config_sets:
         current_config_set_resource_dict = current_config_set['resources']
         print(current_config_set_resource_dict)
         print('    Configuration Objects:')
-        if not current_config_set_resource_dict:
+        if current_config_set_resource_dict:
             key, value = current_config_set_resource_dict.popitem()
             print('key' + key)
             print('value' + value)
