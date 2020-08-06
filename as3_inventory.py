@@ -17,7 +17,6 @@ auth_token = json.loads(token_auth_response.text)['token']['token']
 # Get a list of all of the applications deployed on the BIG-IQ
 headers = {'content-type': 'application/json', 'X-F5-Auth-Token': auth_token}
 global_config_sets_response = requests.get('https://' + bigiq_ip + '/mgmt/cm/global/config-sets', verify=False,headers=headers)
-# print(global_config_sets_response.content)
 global_config_sets = json.loads(global_config_sets_response.content)['items']
 for current_config_set in global_config_sets:
     print(current_config_set)
@@ -88,3 +87,8 @@ for current_config_set in global_config_sets:
     if current_config_set.has_key('lastDeploymentTime'):
         current_config_set_last_deployment_time = current_config_set['lastDeploymentTime']
         print('    Last Deployment: ' + current_config_set_last_deployment_time)
+    if current_config_set.has_key('resources'):
+        current_config_set_resource_dict = current_config_set['resources']
+        for current_resource in current_config_set_resource_dict:
+            print(current_resource)
+            print('    Configuration Objects:')
