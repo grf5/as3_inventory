@@ -97,4 +97,4 @@ for current_config_set in global_config_sets:
                 pool_member_list = current_config_set_resource_dict[current_object][0]['subcollectionResources']
             if current_object[:8] == 'ltm:node':
                 print('    Nodes:')
-                node_list = current_config_set_resource_dict[current_object]
+                node_list = current_config_set_resource_dict[current_object][0]
