@@ -94,7 +94,7 @@ for current_config_set in global_config_sets:
                 print('    Virtual Server: ' + str(current_config_set_resource_dict[current_object][0]['parameters']['name'] + ' (' + current_config_set_resource_dict[current_object][0]['parameters']['destinationAddress'] + ':' + str(current_config_set_resource_dict[current_object][0]['parameters']['destinationPort'] + '/' + current_config_set_resource_dict[current_object][0]['parameters']['mask'] + ')')))
             if current_object[:8] == 'ltm:pool':
                 print('    Pool: ' + str(current_config_set_resource_dict[current_object][0]['parameters']['name']))
-                pool_member_list = current_config_set_resource_dict[current_object][0]['subcollectionResources']['members']
+                pool_member_list = current_config_set_resource_dict[current_object][0]['subcollectionResources'][0]
                 print('    - Member: ' + str(pool_member_list))
             if current_object[:8] == 'ltm:node':
                 print('    Nodes:')
