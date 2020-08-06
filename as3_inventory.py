@@ -99,3 +99,4 @@ for current_config_set in global_config_sets:
             if current_object[:8] == 'ltm:node':
                 print('    Nodes:')
                 node_list = current_config_set_resource_dict[current_object][0]
+                print(node_list)
