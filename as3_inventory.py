@@ -92,4 +92,6 @@ for current_config_set in global_config_sets:
         print(current_config_set_resource_dict)
         print('    Configuration Objects:')
         for current_resource in current_config_set_resource_dict:
-            print('    - ' + str(current_resource))
+            if current_resource[:8] == 'ltm:virtual':
+                print('Virtual Server: ')
+            
