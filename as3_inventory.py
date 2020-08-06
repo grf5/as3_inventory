@@ -20,6 +20,7 @@ global_config_sets_response = requests.get('https://' + bigiq_ip + '/mgmt/cm/glo
 # print(global_config_sets_response.content)
 global_config_sets = json.loads(global_config_sets_response.content)['items']
 for current_config_set in global_config_sets:
+    print(current_config_set)
     # Template for attributes
     # if current_config_set.has_key('status'):
     #     current_config_set_status = current_config_set['status']
