@@ -117,5 +117,5 @@ for current_config_set in global_config_sets:
                 print('    Nodes:')
                 node_list = current_config_set_resource_dict[current_object]
                 for current_node in node_list:
-                    print('    - ' + str(current_node['parameters']['name']) + '(' + str(
+                    print('    - ' + str(current_node['parameters']['name']) + ' (' + str(
                         current_node['parameters']['address']) + ')')
