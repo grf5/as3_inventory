@@ -1,7 +1,6 @@
 import requests
 import json
 import urllib3
-import re
 
 bigiq_ip = '127.0.0.1'
 username = 'admin'
@@ -110,11 +109,10 @@ for current_config_set in global_config_sets:
                 pool_subcollection_resources = current_config_set_resource_dict[current_object][0][
                     'subcollectionResources']
                 for current_pool_subcollection_resource in pool_subcollection_resources:
-                    pattern = r"((([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])[ (\[]?(\.|dot)[ )\]]?){3}([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]))"
                     if current_pool_subcollection_resource[:8] == 'members:':
                         pool_member_list = pool_subcollection_resources[current_pool_subcollection_resource]
                         for current_pool_member in pool_member_list:
-                            print('    - ' + str(current_pool_member['parameters']['nodeReference']['link']) + ':' + str(current_pool_member['parameters']['port']))
+                            print('    - ' + str(current_pool_member['parameters']['nodeReference']['link']).split('/')[-1] + ':' + str(current_pool_member['parameters']['port']))
             if current_object[:8] == 'ltm:node':
                 print('    Nodes:')
                 node_list = current_config_set_resource_dict[current_object]
