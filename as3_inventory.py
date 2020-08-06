@@ -96,7 +96,8 @@ for current_config_set in global_config_sets:
         print('    Last Deployment: ' + current_config_set_last_deployment_time)
     if current_config_set.has_key('resources'):
         current_config_set_resource_dict = current_config_set['resources']
-        print(current_config_set_resource_dict)
+        # Enable the next line to see the entire payload sent for LTM resources
+        #print(current_config_set_resource_dict)
         for current_object in current_config_set_resource_dict:
             if current_object[:11] == 'ltm:virtual':
                 print('    Virtual Server: ' + str(
