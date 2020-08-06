@@ -91,4 +91,4 @@ for current_config_set in global_config_sets:
         print(current_config_set_resource_dict)
         for current_object in current_config_set_resource_dict:
             print('    - Object found: ' + current_object)
-            print('      - Value: ' + current_config_set_resource_dict[current_object])
+            print('      - Value: ' + str(current_config_set_resource_dict[current_object]))
