@@ -99,7 +99,7 @@ for current_config_set in global_config_sets:
                     if current_pool_subcollection_resource[:8] == 'members:':
                         pool_member_list = pool_subcollection_resources[current_pool_subcollection_resource]
                         for current_pool_member in pool_member_list:                            
-                            print('    - ' + str(current_pool_member['parameters']))
+                            print('    - ' + str(current_pool_member['parameters']['nodeReference']['link']))
             if current_object[:8] == 'ltm:node':
                 print('    Nodes:')
                 node_list = current_config_set_resource_dict[current_object]
