@@ -89,7 +89,6 @@ for current_config_set in global_config_sets:
     if current_config_set.has_key('resources'):
         current_config_set_resource_dict = current_config_set['resources']
         print(current_config_set_resource_dict)
-        print('    Configuration Objects:')
         for current_object in current_config_set_resource_dict:
             print('    - Object found: ' + current_object)
             print('      - Value: ' + current_config_set_resource_dict[current_object])
