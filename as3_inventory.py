@@ -21,6 +21,8 @@ global_config_sets_response = requests.get('https://' + bigiq_ip + '/mgmt/cm/glo
                                            headers=headers)
 global_config_sets = json.loads(global_config_sets_response.content)['items']
 for current_config_set in global_config_sets:
+    # Enable to debug
+    print(current_config_set)
     # Template for attributes
     # if current_config_set.has_key('status'):
     #     current_config_set_status = current_config_set['status']
@@ -97,7 +99,7 @@ for current_config_set in global_config_sets:
     if current_config_set.has_key('resources'):
         current_config_set_resource_dict = current_config_set['resources']
         # Enable the next line to see the entire payload sent for LTM resources
-        #print(current_config_set_resource_dict)
+        print(current_config_set_resource_dict)
         for current_object in current_config_set_resource_dict:
             if current_object[:11] == 'ltm:virtual':
                 print('    Virtual Server: ' + str(
