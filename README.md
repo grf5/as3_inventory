@@ -4,11 +4,11 @@
 
 as3_inventory is a simple script that grabs a list of all application services deployed via BIG-IQ and details around each. 
 
-This script can be run on a local BIG-IQ or remotely. To run locally, set the destination address to 127.0.0.1 in the script itself. Also make sure you set a valid username and password.
+This script can be run on a local BIG-IQ or remotely.
 
 This script uses token authentication for the BIG-IQ; basic auth is not required to be enabled.
 
-To run the script, issue the "python as3_inventory.py" command on the BIG-IQ.
+To run the script, issue the "python as3_inventory.py -u username -p password -b bigiq_ip_address" command on the BIG-IQ.
 
 ## Sample Output
 
