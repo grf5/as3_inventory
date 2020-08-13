@@ -109,6 +109,7 @@ for current_config_set in global_config_sets:
         print(current_config_set_resource_dict)
         for current_object in current_config_set_resource_dict:
             if current_object[:11] == 'ltm:virtual':
+                print(len(current_config_set_resource_dict[current_object]))
                 print('    Virtual Server: ' + str(
                     current_config_set_resource_dict[current_object][0]['parameters']['name'] + ' (' +
                     current_config_set_resource_dict[current_object][0]['parameters']['destinationAddress'] + ':' + str(
