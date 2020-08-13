@@ -1,12 +1,14 @@
 import requests
 import json
 import urllib3
-
-bigiq_ip = '127.0.0.1'
-username = 'admin'
-password = 'f5c0nfig123!'
+import argparse
 
 urllib3.disable_warnings()
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-u", "--username", help="BIG-IQ Username", required=True)
+parser.add_argument("-p", "--password", help="BIG-IQ Password", required=True)
+parser.add_argument("-b", "--bigiq_ip", help="BIG-IQ Address", required=True)
 
 # Get an auth token from BIG-IQ
 credentials_dict = {"username": username, "password": password}
