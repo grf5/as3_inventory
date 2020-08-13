@@ -13,6 +13,7 @@ credentials_dict = {"username": username, "password": password}
 headers = {'content-type': 'application/json'}
 token_auth_response = requests.post('https://' + bigiq_ip + '/mgmt/shared/authn/login', verify=False,
                                     data=json.dumps(credentials_dict), headers=headers)
+print(token_auth_response.content)
 auth_token = json.loads(token_auth_response.text)['token']['token']
 
 # Get a list of all of the applications deployed on the BIG-IQ
